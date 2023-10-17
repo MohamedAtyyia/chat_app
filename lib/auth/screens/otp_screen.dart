@@ -10,10 +10,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OTOScreen extends StatelessWidget {
-  const OTOScreen({super.key});
-
+  const OTOScreen({super.key, required this.phoneNumberl});
+  final  String phoneNumberl;
   @override
   Widget build(BuildContext context) {
+    print(phoneNumberl);
+    print('////');
     return SafeArea(
         child: Scaffold(
       backgroundColor: backgroundColor,
@@ -51,7 +53,7 @@ class OTOScreen extends StatelessWidget {
                 if(state is PhoneOTPInValid){
                   flutterTost(state.erroeMessage);
                 }else if (state is PhoneOTPValid){
-                  Navigator.pushReplacementNamed(context, AppRouter.profileScreen);
+                  Navigator.pushReplacementNamed(context, AppRouter.profileScreen,arguments: phoneNumberl);
                 }
               })
         ],

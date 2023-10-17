@@ -36,6 +36,8 @@ class Whatsapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //FirebaseAuth.instance.currentUser!.displayName.toString();
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
